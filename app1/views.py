@@ -47,7 +47,7 @@ def view(request):
 #editing page
 def edit_details(request,pk):
     if request.method=='POST':
-        products = ProductDetails.objects.get(id,pk)
+        products = ProductDetails.objects.get(id=pk)
         products.product_name=request.POST.get('product_name')
         products.description=request.POST.get('description')
         products.product_quantity=request.POST.get('product_quantity')
