@@ -19,9 +19,19 @@
             margin: 7% auto;
             height: 700px;
             color: rgb(0, 0, 0);
-            background-color: white;
+            background-color: #454d55;
             border-radius: 10px;
             box-shadow: 0 0 40px 20px black;
+        }
+        label{
+            color: white;
+        }
+        #link{
+            text-decoration: none;
+            color: aqua;
+        }
+        #link:hover{
+            color: greenyellow;
         }
 
     </style>
@@ -33,7 +43,7 @@
         <div class="row">
 
             <div class="col-sm-6">
-              <h1 style="color:green">Enter Your Product</h1>
+              <h1 style="color:green">Enter Your Product Details</h1>
 
                 <form class="was-validated" method="POST" action="product_details" style="padding-left:100px; padding-top: 50px;">
                     {% csrf_token %}
@@ -86,7 +96,7 @@
                     <button type="submit" class="btn btn-success" style="margin-left:-70px ;">Submit</button>
                 </form>
                 
-              <h6 style="text-align: center;"> If You Want To View Product Details <a href="{% url 'view' %}"><span style="color: green;">Click Here</span></a></h6>
+              <h6 style="text-align: center;"> <span style="color: red;">If You Want To View Product Details</span> <a href="{% url 'view' %}" id="link"><span >Click Here</span></a></h6>
             </div>
 
 

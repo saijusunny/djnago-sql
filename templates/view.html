@@ -8,6 +8,30 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    #edit{
+      text-decoration: none;
+      color: yellow;
+    }
+    #Del{
+      text-decoration: none;
+      color: red;
+    }
+    #edit:hover{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+    #Del:hover{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+    th{
+      color: red;
+    }
+    #id{
+      color: yellow;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +43,7 @@
         <thead>
           <tr>
               
-            <th>Product_id</th>
+            <th id="id">Product_id</th>
             <th>Product_Name</th>
             <th>Description</th>
             <th>Product_Quantity</th>
@@ -30,21 +54,21 @@
         <tbody>
             {% for result in products %}
           <tr>
-              <td>{{result.id}}</td>
+              <td id="id">{{result.id}}</td>
             <td>{{result.product_name}}</td>
             <td>{{result.product_name}}</td>
             <td>{{result.description}}</td>
             <td>{{result.product_quantity}}</td>
             <td>{{result.product_price}}</td>
-            <td><a href="{% url 'edit' result.id %}">edit</a><br>
-            <a href="{% url 'delete' result.id %}">delete</a></td>
+            <td><a href="{% url 'edit' result.id %}" id="edit">Edit</a><br>
+            <a href="{% url 'delete' result.id %}"id="Del">Delete</a></td>
           </tr>
           {% endfor %}
       </tbody>
 
     </table>
     
-    <a href="{% url 'form' %}" style="margin-left: 45%;"><input type="submit" Value="add product" class="btn btn-success" ></a>
+    <a href="{% url 'form' %}" style="margin-left: 45%;"><input type="submit" Value="add product" class="btn btn-dark" ></a>
   </div>
   
   </body>
